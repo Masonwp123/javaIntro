@@ -1,10 +1,11 @@
-classes: Hello
-	java Hello
-
-Hello: Hello.java
-	javac Hello.java
+Hello.class: Hello.java
+	javac -g Hello.java
 
 clean:
 	rm *.class
 
-run: classes
+run: Hello.class
+	java Hello
+
+debug: Hello.class
+	jdb Hello
